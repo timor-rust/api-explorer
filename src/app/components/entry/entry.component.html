@@ -1,0 +1,18 @@
+<header>
+  <h2 [innerText]="entry.API"></h2>
+</header>
+<main>
+  <p [class.less-info]="!entry.showMore" [innerText]="entry.Description"></p>
+  <a [href]="entry.Link" target="_blank">More Info</a>
+
+  <button (click)="entry.showMore = !entry.showMore" *ngIf="entry.Description.length > 20">
+    <ng-container *ngIf="!entry.showMore">Show More</ng-container>
+    <ng-container *ngIf="entry.showMore">Show Less</ng-container>
+  </button>
+
+</main>
+<footer>
+  <span class="category" [innerText]="entry.Category"></span>
+  <span class="protocol" [class.secure]="entry.HTTPS">HTTP<ng-container *ngIf="entry.HTTPS">S</ng-container></span>
+</footer>
+

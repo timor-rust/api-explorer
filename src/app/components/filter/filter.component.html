@@ -1,0 +1,16 @@
+<h2>Filter by Category</h2>
+<select name="category" id="category" (change)="setCategory($event)">
+  <option
+    *ngFor="let category of categories"
+    [value]="category"
+    [innerText]="category"></option>
+</select>
+
+<h2>Filter by Protocol</h2>
+<select name="protocol" id="protocol" (change)="setProtocol($event)">
+  <option
+    *ngFor="let protocol of protocols"
+    [value]="protocol "
+    [innerText]="protocol"></option>
+</select>
+
