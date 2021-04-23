@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {EntryInterface} from "../../entries.interface";
+import {EntryInterface} from "../../../../../entries.interface";
 
 @Component({
   selector: 'ae-entry',

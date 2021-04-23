@@ -1,16 +1,8 @@
 <header>
-  <h1>API Explorer</h1>
-  <ae-search (title$)="getEntriesByTitle($event)"></ae-search>
+  <button routerLink="/about">About</button>
+  <button routerLink="/explorer">Explorer</button>
 </header>
+
 <section>
-  <nav>
-    <ae-filter
-               [categories]="categories"
-               (protocol$)="filterFunc('protocol', $event)"
-               (category$)="filterFunc('category', $event)"
-    ></ae-filter>
-  </nav>
-  <main>
-    <ae-entries [entries]="entries"></ae-entries>
-  </main>
+  <router-outlet></router-outlet>
 </section>

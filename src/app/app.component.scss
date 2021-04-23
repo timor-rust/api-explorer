@@ -3,33 +3,9 @@ header {
   display: flex;
   place-content: center;
   border-bottom: 1px solid #000;
-  flex-direction: column;
   place-items: center;
   padding: 2rem 0 .2rem 0;
-  background: #e1e5f2;
-
-  h1 {
-    margin: 0 0 1rem 0;
-  }
-}
-
-section {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  height: 100%;
-
-  @media screen and (max-width: 680px) {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    padding: .8rem;
-    background: #caf0f8;
-  }
-  main {
-    background: #ccc;
-    padding: 1.2rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+  background: #caf0f8;
+  flex-direction: row;
+  justify-content: space-around;
 }
