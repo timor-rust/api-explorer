@@ -37,12 +37,13 @@ export class ExplorerPageComponent implements OnInit {
   entriesByTitleSub: any;
   getEntriesByTitle(title: string) {
     this.entriesSub.unsubscribe();
-    this.entriesByTitleSub = this.coreService.getEntryByTitle(title)
+    this.entriesByTitleSub = this.coreService.getEntryByTitle(title)// <= this title from $title
       .subscribe((data:EntriesInterface) => this.setData(data.entries));
   }
 
   entries: EntryInterface[] = [];
   entriesBackup: EntryInterface[] = [];
+
   setData(data) {
     this.entriesBackup = data;
     this.entries = data;
@@ -51,13 +52,13 @@ export class ExplorerPageComponent implements OnInit {
 
   filterFunc(filterTyped, userSelection) {
     if (filterTyped === 'protocol') {
-      this.entries = this.entriesBackup.filter((entry:EntryInterface) => {
-        return userSelection === 'HTTPS' ? entry.HTTPS : userSelection === 'HTTP' ? !entry.HTTPS : true;
+      this.entries = this.entriesBackup.filter((data:EntryInterface) => {
+        return userSelection === 'HTTPS' ? data.HTTPS : userSelection === 'HTTP' ? !data.HTTPS : true;
       })
     }
     if (filterTyped === 'category') {
-      this.entries = this.entriesBackup.filter((entry:EntryInterface) => {
-        return userSelection !== 'All' ? entry.Category === userSelection : true;
+      this.entries = this.entriesBackup.filter((data:EntryInterface) => {
+        return userSelection !== 'All' ? data.Category === userSelection : true;
       });
     }
   }

@@ -8,4 +8,9 @@ header {
   background: #caf0f8;
   flex-direction: row;
   justify-content: space-around;
+  overflow: hidden;
 }
+section {
+  height: 100%;
+}
+
